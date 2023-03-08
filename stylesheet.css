@@ -1,0 +1,318 @@
+@font-face {
+    font-family: dancing_script;
+    src: url(./fonts/DancingScript-VariableFont_wght.ttf);
+  }
+@font-face {
+    font-family: damion;
+    src: url(./fonts/Damion-Regular.ttf);
+}
+
+:root{
+    color: white;
+    --theme-colour: #03dac5;
+}
+
+html{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #2d2d2d;
+    backdrop-filter: blur(2px);
+    min-height: 100%;
+    position: relative;
+}
+
+
+body{
+    margin: 0;
+    height: 100%;
+}
+
+
+/* Navbar styling */
+header {
+    display: flex;
+    justify-content: center;
+    background-color: #2d2d2d;
+}
+
+header > section:first-child {
+    position: absolute;
+    left: 0;
+    margin-left: 1em;
+}
+
+header > section:last-child {
+    position: absolute;
+    right: 0;
+    margin-right: 0.5em;
+}
+
+header>section>h1{ 
+    /* display: inline; */
+    float: left; 
+    /* color: white; */
+    margin-top: 0;
+    font-family: 'dancing_script', cursive;
+    font-size: 1.7em;
+    vertical-align: middle;
+    line-height: 50px;
+}
+
+header img{
+    max-width: 25px;
+    float: left;
+}
+
+header>section>a>img{
+    margin-top: 0.7em;
+}
+
+header>section>a:first-child{
+    margin-top: 0;
+}
+
+nav>ul>li{
+    display: inline;
+    font-family: dancing_script,cursive;
+    font-size: 1.2em;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+}
+
+nav a:visited {
+    color: white;
+  }
+
+nav ul{
+    padding-left: 0;
+}
+
+header>nav>ul>li:not(:last-child){
+    margin-right: 2em;
+}
+
+header>section>a>img{
+    margin-right: 0.5em;
+}
+
+#current a{
+    text-decoration-line: underline;
+    text-decoration-color: var(--theme-colour);
+    text-decoration-thickness: 2px;
+ }
+
+nav>ul>li>a:hover, footer>p>a:hover{
+    color: var(--theme-colour);
+}
+h1>a{
+    text-decoration: none;
+    color: white;
+}
+h1>a:hover,main>h5>a:hover{
+    color: var(--theme-colour);
+} 
+
+/* Main Content styling */
+.mainpage{
+    background-color: #2d2d2d;
+    flex-grow: 1;
+    position:absolute;
+    top: 3.1em;
+    bottom:0;
+    left:0;
+    right:0;
+    overflow:hidden;
+    max-width: 25%;
+}
+
+main>section>section>p,main>section>section>h2{
+    margin-right: 15%;
+    margin-bottom: 0.9rem;
+    margin-top: 0;
+    text-align: right;
+    display: flex;
+    justify-content: right;
+    font-family: dancing_script,cursive;
+}
+
+main>section>section>button{
+    color: white;
+    background-color: var(--theme-colour);
+    text-decoration: none;
+    padding: 1em 3em;
+    border: none;
+    text-align: center;
+    border-radius: 2em;
+    display: block;
+    margin-left: auto;
+    margin-right: 15%;
+    margin-top: 1.5rem;
+    transition: transform 0.5s;
+}
+
+main>section>section>button:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.mainpage section{
+    display: block;
+    margin-top: 50%;
+}
+    /* about page styling */
+main>p{
+    border: 2px var(--theme-colour) solid;
+    border-radius: 2em;
+    margin: 1% 2%;
+    padding: 2em 2em;
+    backdrop-filter: blur(10px);
+}
+main>h1{
+    text-align: center;
+    font-family: dancing_script, cursive;
+}
+
+
+    /* gallery styling */ 
+    /* Css for .row and .column inspired by W3schools --> https://www.w3schools.com/howto/howto_css_image_grid_responsive.asp */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+.column {
+    flex: 23%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+    transition: 1s;
+    border-radius: 1em;
+}
+.column img:hover{
+    transform: scale(1.2);
+}
+
+/* shipping table style */
+table,th,td{
+    border: 2px white solid;
+    margin: 2% auto;
+    border-collapse: collapse;
+}
+main>h5{
+    text-align: center;
+}
+main>h5>a{
+    color: white;
+}
+table>caption{
+    font-family: dancing_script,cursive;
+    font-size: 1.5em;
+    color: var(--theme-colour);
+    text-decoration: underline;
+}
+td,th{
+    font-family: dancing_script,cursive;
+}
+main>h5{
+    font-family: damion,cursive;
+    font-size: 1.1em;
+}
+
+/* contact styling */
+.contact{
+    margin-left: 2em;
+    margin-right: 2em;
+}
+main>section>h1{
+    font-family: dancing_script, cursive;
+    font-size: 2em;
+}
+main>section>p{
+    font-family: damion,sans-serif;
+    font-size: 1.5em;
+}
+main>section>h4{
+    display: inline;
+}
+main>section>h4>a{
+    text-decoration: none;
+    color: white;
+}
+main>section>h4>a:hover{
+    color:var(--theme-colour);
+}
+main>section>img{
+    max-width: 30px;
+}
+main>section>img:not(:first){
+    margin-left: 1em;
+}
+
+
+/* Footer styling */
+footer{
+    background-color: #2d2d2d;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 3rem;
+}
+
+footer p{
+    font-size: 0.8em;
+    opacity: 0.5;
+    vertical-align: middle;
+    line-height: 2em;
+    margin-left: 1em;
+    margin-right: 1em;
+    display: inline-block;
+}
+footer>p>a{
+    color: white;
+}
+footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+@media screen and (max-width: 700px){
+    nav>ul{
+        display: block;
+    }
+    nav{
+        margin-top: 2.5em;
+    }
+    .mainpage{
+        margin-top: 2.5em;
+        max-width: 100%;
+        max-height: 13em;
+    }
+    .mainpage section{
+        display: block;
+        margin-top: 2.5em;
+        
+    }
+    main>section>section>p,main>section>section>h2{
+        margin-bottom: 0.9rem;
+        text-align: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    main>section>section>button{
+        margin-right: auto;
+    }
+    .column {
+        flex: 45%;
+        max-width: 50%;
+    }
+}
