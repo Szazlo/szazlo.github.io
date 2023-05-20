@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Github</title>
+    <link rel="stylesheet" href="stylesheet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="scripts.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-brand mb-0 h1">Geocache</span>
+</nav>
+
+<div class="container mt-4">
+    <h1>Welcome to the submission page </h1>
+    <div id="greeting">
+        <p>Use the box below the check your answer and get the next coordinates.</p>
+        <p>Your answer should be all lowercase!</p>
+    </div>
+    <div id="result" class="mt-4"></div>
+    <form id="attributeForm" class="form-inline">
+        <div class="form-group mb-2">
+            <input type="text" class="form-control" id="inputAttribute" placeholder="Solution">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Check Answer</button>
+    </form>
+    <p id="response"></p>
+</div>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
+    // Function to extract the attribute value from the URL
+    function getAttributeFromURL() {
+        const queryString = window.location.search;
+        const attributeValue = queryString.substring(1); // Remove the '?' symbol
+        return attributeValue;
+    }
+
+    function correctAnswer() {
+        const response = document.getElementById("response");
+        response.style.color = "green";
+        response.innerHTML = "Correct! The next coordinates are: N W";
+    }
+
+    function wrongAnswer() {
+        const response = document.getElementById("response");
+        response.style.color = "red";
+        response.innerHTML = "Wrong answer, try again!";
+    }
+
+    // Check if an attribute was provided in the URL
+    let attributeValue = getAttributeFromURL();
+    const attributeForm = document.getElementById("attributeForm");
+    const greet = document.getElementById("greeting");
+
+    if (attributeValue) {
+        attributeForm.style.display = "none"; // Hide the input form
+        greet.style.display = "none";
+        if (attributeValue === "geocache") {
+            correctAnswer();
+        } else {
+            wrongAnswer();
+        }
+    } else {
+        attributeForm.style.display = "block"; // Display the input form
+        greet.style.display = "block";
+        attributeForm.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent form submission
+            const inputField = document.getElementById("inputAttribute");
+            attributeValue = inputField.value;
+            if (attributeValue === "geocache") {
+                correctAnswer();
+            } else {
+                wrongAnswer()
+            }
+        });
+    }
+
+</script>
+</body>
+</html>
